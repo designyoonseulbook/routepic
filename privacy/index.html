@@ -29,7 +29,8 @@
 
 <div class="highlight">
   TripJournal은 <strong>오프라인 우선(Offline-First)</strong> 앱입니다.<br>
-  수집된 모든 데이터는 사용자의 기기에만 저장되며, 외부 서버나 클라우드로 전송되지 않습니다.
+  여행 기록 데이터(경로, 사진, 메모 등)는 사용자의 기기 내 로컬 데이터베이스에만 저장됩니다.<br>
+  단, 오프라인 지도 신청(BBBike) 및 음성 인식(Apple) 기능 사용 시 일부 정보가 외부 서버로 전송될 수 있습니다.
 </div>
 
 <h2>1. 수집하는 정보</h2>
@@ -39,7 +40,7 @@
   <li><strong>카메라</strong> — 여행 중 사진 및 영상을 촬영합니다.</li>
   <li><strong>마이크</strong> — 음성 메모 및 영상 촬영 시 사용됩니다.</li>
   <li><strong>사진 라이브러리</strong> — 촬영한 사진을 저장하거나 기존 사진을 불러옵니다.</li>
-  <li><strong>음성 인식</strong> — 음성 메모를 텍스트로 변환합니다. Apple의 음성 인식 API를 사용합니다.</li>
+  <li><strong>음성 인식</strong> — 음성 메모를 텍스트로 변환합니다. Apple의 음성 인식 API를 사용하며, 변환 처리 시 오디오 데이터가 Apple 서버로 전송될 수 있습니다. 오프라인 환경에서는 텍스트 변환 기능을 사용할 수 없습니다.</li>
 </ul>
 
 <h2>2. 정보의 저장 방식</h2>
@@ -54,6 +55,7 @@
 <ul>
   <li><strong>BBBike Extract (bbbike.org)</strong> — 오프라인 지도 파일 추출 요청 시, 사용자가 입력한 이메일 주소와 지도 영역 좌표가 BBBike 서버로 전송됩니다. 이 정보는 지도 파일 준비 완료 시 다운로드 링크를 이메일로 발송하는 데만 사용됩니다. BBBike의 개인정보 처리방침은 <a href="https://www.bbbike.org/privacy.html" target="_blank">bbbike.org</a>에서 확인하세요.</li>
   <li><strong>Google Maps / MapTiler / MapLibre</strong> — 지도 렌더링에 사용됩니다. 지도 타일 로드 시 해당 서비스의 서버에 요청이 전달될 수 있습니다.</li>
+  <li><strong>Apple 음성 인식</strong> — 음성 메모 텍스트 변환 기능 사용 시 오디오 데이터가 Apple 서버로 전송될 수 있습니다. Apple의 개인정보 처리방침은 <a href="https://www.apple.com/legal/privacy/ko/" target="_blank">apple.com</a>에서 확인하세요.</li>
 </ul>
 
 <h2>4. 제3자 정보 공유</h2>
